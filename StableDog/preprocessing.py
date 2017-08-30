@@ -66,6 +66,42 @@ def oneHotEncoding(data, one_hot_encoder):
     独热编码
     - data: 待编码数据
     - one_hot_encoder: 独热编码器
+    return: 独热编码后的数据
     """
     encoded_vector = one_hot_encoder.transform(data).toarray()
     return encoded_vector
+
+def LabelEncoder(label_classes, log=True):
+    """
+    标签编码器
+    - label_classes: 标签列表
+    - log: 打印信息(默认打印)
+    return: 标签编码器
+    """
+    label_encoder = preprocessing.LabelEncoder()
+    label_encoder.fit(label_classes)
+    if log:
+        print("\nClass mapping:")
+        for i, item in enumerate(label_encoder.classes_):
+            print(item, '-->', i)
+    return label_encoder
+
+def labelEncoding(labels, label_encoder):
+    """
+    标签编码
+    - labels: 标签列表
+    - label_encoder: 标签编码器
+    return: 编码后的标签列表
+    """
+    encoded_labels = label_encoder.transform(labels)
+    return list(encoded_labels)
+
+def labelDecoding(encoded_labels, label_encoder):
+    """
+    标签解码
+    - encoded_labels: 编码后的标签列表
+    - label_encoder: 标签编码器
+    return: 原始标签列表
+    """
+    decoded_labels = label_encoder.inverse_transform(encoded_labels)
+    return list(decoded_labels)
