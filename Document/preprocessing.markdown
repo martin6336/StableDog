@@ -2,7 +2,7 @@
 
 **数据预处理模块**
 
-包含常用的一些数据预处理技术，包括`均值移除(Mean removal)`、`范围缩放(Scaling)`、`归一化(Normalization)`、`二值化(Binarization)`等。
+包含常用的一些数据预处理技术，包括**均值移除(Mean removal)**、**范围缩放(Scaling)**、**归一化(Normalization)**、**二值化(Binarization)**等。
 
 ## 索引
 
