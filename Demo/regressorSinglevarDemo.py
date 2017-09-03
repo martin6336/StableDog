@@ -2,8 +2,8 @@
 
 import sys
 sys.path.append('../')
-from StableDog import fileOperating, regressor
-from StableDog.fileOperating import FileReader
+import StableDog
+from StableDog.data import FileReader
 from StableDog.regressor import LinearRegressor
 
 fileReader = FileReader('../testData/data_singlevar.txt',',')
