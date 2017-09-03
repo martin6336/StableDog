@@ -16,7 +16,7 @@
 ### 1.1 构造函数
 
 ```
-StableDog.data.FileReader(self, filename, csv_file=False, delimiter=' ', include_label=True, log=False)
+StableDog.data.FileReader(filename, csv_file=False, delimiter=' ', include_label=True, log=False)
 ```
 
 - **filename**: 文件名称
@@ -28,7 +28,7 @@ StableDog.data.FileReader(self, filename, csv_file=False, delimiter=' ', include
 ### 1.2 获得样本
 
 ```
-FileReader.getSamples(self, feature_name=False, split=False, training_prop=0.8, shuffle=False, random_seed=7)
+FileReader.getSamples(feature_name=False, split=False, training_prop=0.8, shuffle=False, random_seed=7)
 ```
 
 - **feature_name**: 是否包含特征名称
