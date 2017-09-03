@@ -4,23 +4,23 @@
 
 回归是估计输入数据与连续值输出数据之间关系的过程。数据通常是实数形式的，我们的目标是估计满足输入到输出映射关系的基本函数。
 
-该模块提供了从简单的 **线性回归器(LinearRegressor)**、**多项式回归器(PolynomialRegressor)**、**决策树回归器(DecisionTreeRegressor)**到更为实用的 **AdaBoost决策树回归器(AdaBoostRegressor)**、**随机森林回归器(RandomForestRegressor)** 等各种回归器。
+该模块提供了从简单的 **线性回归器(LinearRegressor)**、**多项式回归器(PolynomialRegressor)**、**决策树回归器(DecisionTreeRegressor)** 到更为实用的 **AdaBoost决策树回归器(AdaBoostRegressor)**、**随机森林回归器(RandomForestRegressor)** 等各种回归器。
 
 ## 索引
 
-- 回归器共有方法
+- [回归器共有方法](#1-回归器共有方法)
   - 训练模型
   - 测试模型
   - 预测
   - 存储模型
   - 加载模型
-- 线性回归器(LinearRegressor)
-- 岭回归器(RidgeRegressor)
-- 多项式回归器(PolynomialRegressor)
-- SGD回归器(SGDRegressor)
-- 决策树回归器(DecisionTreeRegressor)
-- AdaBoost决策树回归器(AdaBoostRegressor)
-- 随机森林回归器(RandomForestRegressor)
+- [线性回归器(LinearRegressor)](#2-线性回归器linearregressor)
+- [岭回归器(RidgeRegressor)](#3-岭回归器ridgeregressor)
+- [多项式回归器(PolynomialRegressor)](#4-多项式回归器polynomialregressor)
+- [SGD回归器(SGDRegressor)](#5-sgd回归器sgdregressor)
+- [决策树回归器(DecisionTreeRegressor)](#6-决策树回归器decisiontreeregressor)
+- [AdaBoost决策树回归器(AdaBoostRegressor)](#7-adaboost决策树回归器adaboostregressor)
+- [随机森林回归器(RandomForestRegressor)](#8-随机森林回归器randomforestregressor)
 
 ## 1. 回归器共有方法
 
