@@ -53,8 +53,8 @@ plt.yticks(())
 plt.show()
 
 # 模型存储
-linear_regressor.saveModel('3_model_linear_regr.pkl')
+linear_regressor.saveModel('model_linear_regr.pkl')
 
 # 读取模型
-linear_regressor.loadModel('3_model_linear_regr.pkl')
+linear_regressor.loadModel('model_linear_regr.pkl')
 linear_regressor.test(X_test, y_test)

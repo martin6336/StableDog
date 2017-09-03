@@ -9,20 +9,25 @@ class LinearRegressor:
     """
     线性回归器
     """
+    def __init__(self):
+        """
+        初始化模型
+        """
+        self.__linear_regressor = linear_model.LinearRegression()
+
     def train(self, X_train, y_train):
         """
         训练模型
-        - X_train 训练特征集
-        - y_train 训练目标集
+        - X_train: 训练特征集
+        - y_train: 训练目标集
         """
-        self.__linear_regressor = linear_model.LinearRegression()
         self.__linear_regressor.fit(X_train, y_train)
     
     def test(self, X_test, y_test):
         """
         测试模型
-        - X_test 测试特征集
-        - y_test 测试目标集
+        - X_test: 测试特征集
+        - y_test: 测试目标集
         return: 预测目标
         """
         y_test_pred = self.__linear_regressor.predict(X_test)
@@ -36,7 +41,7 @@ class LinearRegressor:
     def predict(self, X_test):
         """
         预测
-        - X_test 测试特征集
+        - X_test: 测试特征集
         return: 预测目标
         """
         y_test_pred = self.__linear_regressor.predict(X_test)
@@ -65,7 +70,7 @@ class RidgeRegressor:
     def __init__(self, alpha=1.0, max_iter_num=10000):
         """
         初始化模型
-        - alpha: 正则化强度(默认0.01)
+        - alpha: 正则化强度
         - max_iter_num: 最大迭代次数
         """
         self.__ridge_regressor = linear_model.Ridge(alpha, fit_intercept=True, max_iter=max_iter_num)
@@ -73,16 +78,16 @@ class RidgeRegressor:
     def train(self, X_train, y_train):
         """
         训练模型
-        - X_train 训练特征集
-        - y_train 训练目标集
+        - X_train: 训练特征集
+        - y_train: 训练目标集
         """
         self.__ridge_regressor.fit(X_train, y_train)
     
     def test(self, X_test, y_test):
         """
         测试模型
-        - X_test 测试特征集
-        - y_test 测试目标集
+        - X_test: 测试特征集
+        - y_test: 测试目标集
         return: 预测目标
         """
         y_test_pred = self.__ridge_regressor.predict(X_test)
@@ -96,7 +101,7 @@ class RidgeRegressor:
     def predict(self, X_test):
         """
         预测
-        - X_test 测试特征集
+        - X_test: 测试特征集
         return: 预测目标
         """
         y_test_pred = self.__ridge_regressor.predict(X_test)
@@ -133,8 +138,8 @@ class PolynomialRegressor:
     def train(self, X_train, y_train):
         """
         训练模型
-        - X_train 训练特征集
-        - y_train 训练目标集
+        - X_train: 训练特征集
+        - y_train: 训练目标集
         """
         X_train_transformed = self.__polynomial.fit_transform(X_train)
         self.__poly_linear_model.fit(X_train_transformed, y_train)
@@ -142,8 +147,8 @@ class PolynomialRegressor:
     def test(self, X_test, y_test):
         """
         测试模型
-        - X_test 测试特征集
-        - y_test 测试目标集
+        - X_test: 测试特征集
+        - y_test: 测试目标集
         return: 预测目标
         """
         X_test_transformed = self.__polynomial.fit_transform(X_test)
@@ -158,7 +163,7 @@ class PolynomialRegressor:
     def predict(self, X_test):
         """
         预测
-        - X_test 测试特征集
+        - X_test: 测试特征集
         return: 预测目标
         """
         X_test_transformed = self.__polynomial.fit_transform(X_test)
@@ -173,12 +178,11 @@ class PolynomialRegressor:
         with open(output_model_file, 'wb') as f:
             pickle.dump(self.__poly_linear_model, f)
 
-    def loadModel(self, degree, output_model_file):
+    def loadModel(self, output_model_file):
         """
         加载模型
         - output_model_file: 模型名称
         """
-        self.__polynomial = PolynomialFeatures(degree)
         with open(output_model_file, 'rb') as f:
             self.__poly_linear_model = pickle.load(f)
 
@@ -197,16 +201,16 @@ class SGDRegressor:
     def train(self, X_train, y_train):
         """
         训练模型
-        - X_train 训练特征集
-        - y_train 训练目标集
+        - X_train: 训练特征集
+        - y_train: 训练目标集
         """
         self.__sgd_regressor.fit(X_train, y_train)
     
     def test(self, X_test, y_test):
         """
         测试模型
-        - X_test 测试特征集
-        - y_test 测试目标集
+        - X_test: 测试特征集
+        - y_test: 测试目标集
         return: 预测目标
         """
         y_test_pred = self.__sgd_regressor.predict(X_test)
@@ -220,7 +224,7 @@ class SGDRegressor:
     def predict(self, X_test):
         """
         预测
-        - X_test 测试特征集
+        - X_test: 测试特征集
         return: 预测目标
         """
         y_test_pred = self.__sgd_regressor.predict(X_test)
@@ -256,16 +260,16 @@ class DecisionTreeRegressor:
     def train(self, X_train, y_train):
         """
         训练模型
-        - X_train 训练特征集
-        - y_train 训练目标集
+        - X_train: 训练特征集
+        - y_train: 训练目标集
         """
         self.__dt_regressor.fit(X_train, y_train)
     
     def test(self, X_test, y_test):
         """
         测试模型
-        - X_test 测试特征集
-        - y_test 测试目标集
+        - X_test: 测试特征集
+        - y_test: 测试目标集
         return: 预测目标
         """
         y_test_pred = self.__dt_regressor.predict(X_test)
@@ -279,7 +283,7 @@ class DecisionTreeRegressor:
     def predict(self, X_test):
         """
         预测
-        - X_test 测试特征集
+        - X_test: 测试特征集
         return: 预测目标
         """
         y_test_pred = self.__dt_regressor.predict(X_test)
@@ -316,22 +320,24 @@ class AdaBoostRegressor:
         """
         初始化模型
         - depth: 树最大深度
+        - max_estimators: 最大容忍误差, 一旦某个基学习器误差超过该值, 学习过程提前终止
+        - random_seed: 随机数种子
         """
         self.__ab_regressor = ensemble.AdaBoostRegressor(tree.DecisionTreeRegressor(max_depth=depth), n_estimators=max_estimators, random_state=random_seed)
 
     def train(self, X_train, y_train):
         """
         训练模型
-        - X_train 训练特征集
-        - y_train 训练目标集
+        - X_train: 训练特征集
+        - y_train: 训练目标集
         """
         self.__ab_regressor.fit(X_train, y_train)
     
     def test(self, X_test, y_test):
         """
         测试模型
-        - X_test 测试特征集
-        - y_test 测试目标集
+        - X_test: 测试特征集
+        - y_test: 测试目标集
         return: 预测目标
         """
         y_test_pred = self.__ab_regressor.predict(X_test)
@@ -345,7 +351,7 @@ class AdaBoostRegressor:
     def predict(self, X_test):
         """
         预测
-        - X_test 测试特征集
+        - X_test: 测试特征集
         return: 预测目标
         """
         y_test_pred = self.__ab_regressor.predict(X_test)
@@ -390,16 +396,16 @@ class RandomForestRegressor:
     def train(self, X_train, y_train):
         """
         训练模型
-        - X_train 训练特征集
-        - y_train 训练目标集
+        - X_train: 训练特征集
+        - y_train: 训练目标集
         """
         self.__rf_regressor.fit(X_train, y_train)
     
     def test(self, X_test, y_test):
         """
         测试模型
-        - X_test 测试特征集
-        - y_test 测试目标集
+        - X_test: 测试特征集
+        - y_test: 测试目标集
         return: 预测目标
         """
         y_test_pred = self.__rf_regressor.predict(X_test)
@@ -413,7 +419,7 @@ class RandomForestRegressor:
     def predict(self, X_test):
         """
         预测
-        - X_test 测试特征集
+        - X_test: 测试特征集
         return: 预测目标
         """
         y_test_pred = self.__rf_regressor.predict(X_test)
