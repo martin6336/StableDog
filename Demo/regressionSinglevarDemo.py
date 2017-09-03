@@ -5,15 +5,18 @@ sys.path.append('../')
 import StableDog
 from StableDog.data import FileReader
 from StableDog.regressor import LinearRegressor
+import numpy as np
 
-fileReader = FileReader('../testData/data_singlevar.txt',',')
+fileReader = FileReader('../testData/data_singlevar.txt',False,',')
 
 # 按 0.8 切分训练集、测试集
-X_train, y_train, X_test, y_test = fileReader.getSamples(True, training_prop=0.8)
+X_train, y_train, X_test, y_test = fileReader.getSamples(feature_name=False, split=True, training_prop=0.8)
 
-# 将 y 转换为 float
-y_train = [float(y) for y in y_train]
-y_test = [float(y) for y in y_test]
+# 转换数据类型
+X_train = X_train.astype(np.float32)
+y_train = y_train.astype(np.float32)
+X_test = X_test.astype(np.float32)
+y_test = y_test.astype(np.float32)
 
 # 创建线性回归器
 linear_regressor = LinearRegressor()
