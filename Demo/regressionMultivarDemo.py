@@ -9,7 +9,7 @@ from StableDog.regressor import PolynomialRegressor
 from StableDog.regressor import SGDRegressor
 import numpy as np
 
-fileReader = FileReader('../testData/data_multivar.txt',False,',')
+fileReader = FileReader('../testData/data_multivar.txt', csv_file=False, delimiter=',')
 
 # 按 0.8 切分训练集、测试集
 X_train, y_train, X_test, y_test = fileReader.getSamples(feature_name=False, split=True, training_prop=0.8)

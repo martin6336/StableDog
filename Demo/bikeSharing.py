@@ -9,7 +9,7 @@ from StableDog.regressor import RandomForestRegressor
 import numpy as np
 
 # 加载数据文件
-fileReader = FileReader('../testData/bike_day.csv',csv_file=True)
+fileReader = FileReader('../testData/bike_day.csv', csv_file=True)
 # 按 0.8 切分训练集、测试集
 X_train, y_train, X_test, y_test, feature_names = fileReader.getSamples(feature_name=True, split=True, 
                                                                         training_prop=0.8, shuffle=True, random_seed=7)
