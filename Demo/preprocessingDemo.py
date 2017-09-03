@@ -11,7 +11,6 @@ data = np.array([[ 3, -1.5,  2, -5.4],
 print(data)
 
 # 均值移除
-# data_standardized = preprocessing.meanRemoval(data, True)
 data_standardized = preprocessing.meanRemoval(data, True)
 print("\n均值移除后数据:\n", data_standardized)
 
@@ -37,7 +36,7 @@ train_data = np.array([[0, 2, 1, 12],
 one_hot_encoder = preprocessing.OneHotEncoder(train_data) # 构建编码器
 data = [[2, 3, 4, 3]]
 encoded_vector = preprocessing.oneHotEncoding(data, one_hot_encoder)
-print("\n训练数据:\n", data)
+print("\n数据:\n", data)
 print("\n独热编码后数据:\n", encoded_vector)
 
 # 便签编码

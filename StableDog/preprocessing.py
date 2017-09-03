@@ -17,15 +17,15 @@ def meanRemoval(data, log=False):
         print('Std deviation =', data_standardized.std(axis=0))
     return data_standardized
 
-def scaling(data, min, max):
+def scaling(data, start_range, end_range):
     """
     缩放数据
     - data: 待处理数据
-    - min: 缩放下界
-    - max: 缩放上界
+    - start_range: 缩放下界
+    - end_range: 缩放上界
     return: 缩放后的数据
     """
-    data_scaler = preprocessing.MinMaxScaler(feature_range=(min, max))
+    data_scaler = preprocessing.MinMaxScaler(feature_range=(start_range, end_range))
     data_scaled = data_scaler.fit_transform(data)
     return data_scaled
 
