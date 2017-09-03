@@ -23,5 +23,5 @@ StableDog 通过 [preprocessing 模块](https://github.com/jsksxs360/StableDog/b
 
 回归是估计输入数据与连续值输出数据之间关系的过程。数据通常是实数形式的，我们的目标是估计满足输入到输出映射关系的基本函数。
 
-StableDog 通过 [regressor 模块](https://github.com/jsksxs360/StableDog/blob/master/Document/regressor.markdown)提供了从简单的 **线性回归器(LinearRegressor)**、**多项式回归器(PolynomialRegressor)**、**决策树回归器(DecisionTreeRegressor)**到更为实用的 **AdaBoost决策树回归器(AdaBoostRegressor)**、**随机森林回归器(RandomForestRegressor)** 等各种回归器。
+StableDog 通过 [regressor 模块](https://github.com/jsksxs360/StableDog/blob/master/Document/regressor.markdown)提供了从简单的 **线性回归器(LinearRegressor)**、**多项式回归器(PolynomialRegressor)**、**决策树回归器(DecisionTreeRegressor)** 到更为实用的 **AdaBoost决策树回归器(AdaBoostRegressor)**、**随机森林回归器(RandomForestRegressor)** 等各种回归器。
 
