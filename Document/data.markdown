@@ -6,10 +6,10 @@
 
 ## 索引
 
-- [StableDog.data.FileReader 类]()
-  - [构造函数]()
-  - [获得样本]()
-- [绘制特征的相对重要性]()
+- [StableDog.data.FileReader 类](#1-stabledogdatafilereader-类)
+  - [构造函数](#11-构造函数)
+  - [获得样本](#12-获得样本)
+- [绘制特征的相对重要性](#2-绘制特征的相对重要性)
 
 ## 1. StableDog.data.FileReader 类
 
@@ -93,9 +93,9 @@ linear_regressor.test(X_test, y_test)
 StableDog.data.plot_feature_importances(feature_importances, title, feature_names)
 ```
 
-- feature_importances: 特征的相对重要性
-- title: 图片标题
-- feature_names: 特征名称
+- **feature_importances**: 特征的相对重要性
+- **title**: 图片标题
+- **feature_names**: 特征名称
 
 注：feature_importances 通常由回归器的 `getFeatureImportances()` 获得。
 
