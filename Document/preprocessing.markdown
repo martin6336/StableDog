@@ -6,18 +6,18 @@
 
 ## 索引
 
-- [均值移除(Mean removal)]()
-- [缩放数据(Scaling)]()
-- [归一化数据(Normalization)]()
-- [二值化数据(Binarization)]()
-- [独热编码]()
-  - [独热编码器]()
-  - [独热编码]()
-- [标签编码]()
-  - [标签编码器]()
-  - [标签编码]()
-  - [标签解码]()
-- [Demo]()
+- [均值移除(Mean removal)](#1-均值移除mean-removal)
+- [缩放数据(Scaling)](#2-缩放数据scaling)
+- [归一化数据(Normalization)](#3-归一化数据normalization)
+- [二值化数据(Binarization)](#4-二值化数据binarization)
+- [独热编码](#5-独热编码)
+  - [独热编码器](#51-独热编码器)
+  - [独热编码](#52-独热编码)
+- [标签编码](#6-标签编码)
+  - [标签编码器](#61-标签编码器)
+  - [标签编码](#62-标签编码)
+  - [标签解码](#63-标签解码)
+- [Demo](#demo)
 
 ## 1. 均值移除(Mean removal)
 
@@ -258,4 +258,4 @@ toyota --> 3
 
 ## Demo
 
-- [preprocessingDemo.py]()
+- [preprocessingDemo.py](https://github.com/jsksxs360/StableDog/blob/master/Demo/preprocessingDemo.py)
