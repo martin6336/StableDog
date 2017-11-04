@@ -10,7 +10,7 @@ class Regressor:
     回归器
     """
     def __init__(self):
-        self.regressor = None
+        raise NotImplementedError
 
     def train(self, X_train, y_train):
         """
