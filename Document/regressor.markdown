@@ -46,7 +46,7 @@ Regressor.test(X_test, y_test)
 
 return: 预测目标
 
-注：`test()` 会计算并打印包括**平均绝对误差(mean absolute error)**、**均方误差(mean squared error)**、**中位数绝对误差(median absolute error)**、**解释方差分(explained variance score)**、**R方得分(R2 score)**在内的回归器各项评价指标。通常的做法是尽量保证均方误差最低，而且解释方差分最高。
+注：`test()` 会计算并打印包括 **平均绝对误差(mean absolute error)**、**均方误差(mean squared error)**、**中位数绝对误差(median absolute error)**、**解释方差分(explained variance score)**、**R方得分(R2 score)** 在内的回归器各项评价指标。通常的做法是尽量保证均方误差最低，而且解释方差分最高。
 
 ### 1.3 预测
 
