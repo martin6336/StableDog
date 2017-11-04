@@ -6,6 +6,9 @@ from sklearn.preprocessing import PolynomialFeatures
 import pickle
 
 class Regressor:
+    """
+    回归器
+    """
     def __init__(self):
         self.regressor = None
 
