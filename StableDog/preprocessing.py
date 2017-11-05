@@ -71,7 +71,7 @@ def oneHotEncoding(data, one_hot_encoder):
     encoded_vector = one_hot_encoder.transform(data).toarray()
     return encoded_vector
 
-def LabelEncoder(label_classes, log=True):
+def LabelEncoder(label_classes=None, log=True):
     """
     标签编码器
     - label_classes: 标签列表
@@ -79,12 +79,23 @@ def LabelEncoder(label_classes, log=True):
     return: 标签编码器
     """
     label_encoder = preprocessing.LabelEncoder()
-    label_encoder.fit(label_classes)
-    if log:
-        print("\nClass mapping:")
-        for i, item in enumerate(label_encoder.classes_):
-            print(item, '-->', i)
+    if label_classes is not None:
+        label_encoder.fit(label_classes)
+        if log:
+            print("\nClass mapping:")
+            for i, item in enumerate(label_encoder.classes_):
+                print(item, '-->', i)
     return label_encoder
+
+def createAndEncoding(labels, label_encoder):
+    """
+    创建编码器并且编码
+    - labels: 标签列表
+    - label_encoder: 被重新创建的标签编码器
+    return: 编码后的标签列表
+    """
+    encoded_labels = label_encoder.fit_transform(labels)
+    return list(encoded_labels)
 
 def labelEncoding(labels, label_encoder):
     """

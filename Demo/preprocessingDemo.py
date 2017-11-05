@@ -52,3 +52,12 @@ encoded_labels = [2, 1, 0, 3, 1]
 decoded_labels = preprocessing.labelDecoding(encoded_labels, label_encoder)
 print("\n编码后的标签 =", encoded_labels)
 print("解码后的标签 =", decoded_labels)
+
+print("\n重新创建编码器...")
+label_classes = ['audi', 'ford', 'audi', 'toyota', 'ford', 'bmw']
+label_encoder = preprocessing.LabelEncoder()
+preprocessing.createAndEncoding(label_classes, label_encoder)
+labels = ['toyota', 'ford', 'audi', 'ford']
+encoded_labels = preprocessing.labelEncoding(labels, label_encoder)
+print("原始标签 =", labels)
+print("编码后的标签 =", encoded_labels)
