@@ -3,7 +3,7 @@
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
-from sklearn import utils
+from sklearn import utils, cross_validation
 
 class FileReader:
     """
@@ -57,7 +57,7 @@ class FileReader:
         - feature_name: 是否包含特征名称
         - split: 是否划分训练测试集
         - training_prop: 训练集比例
-        - shuffle: 是否打乱样本
+        - shuffle: 是否打乱样本, 划分一定打乱
         - random_seed: 打乱时的随机数种子
         return: 
         (不划分)特征集, 目标集;
@@ -66,19 +66,16 @@ class FileReader:
         """
         X = np.array(self.features)
         y = np.array(self.labels)
-        if shuffle:
-            X, y = utils.shuffle(X, y, random_state=random_seed)
+        
         if not split:
+            if shuffle:
+                X, y = utils.shuffle(X, y, random_state=random_seed)
             if feature_name:
                 return X, y, self.feature_name
             else:
                 return X, y
 
-        num_training = int(training_prop * len(self.labels))
-        X_train = X[:num_training]
-        y_train = y[:num_training]
-        X_test = X[num_training:]
-        y_test = y[num_training:]
+        X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, y, train_size=training_prop, random_state=random_seed)
         if feature_name:
             return X_train, y_train, X_test, y_test, self.feature_name
         else:
