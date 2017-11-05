@@ -7,7 +7,7 @@ from StableDog.data import FileReader
 from StableDog.regressor import LinearRegressor
 import numpy as np
 
-fileReader = FileReader('../testData/data_singlevar.txt', csv_file=False, delimiter=',')
+fileReader = FileReader('../testData/regressor_data_singlevar.txt', csv_file=False, delimiter=',')
 
 # 按 0.8 切分训练集、测试集
 X_train, y_train, X_test, y_test = fileReader.getSamples(feature_name=False, split=True, training_prop=0.8)
